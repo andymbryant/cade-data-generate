@@ -16,6 +16,3 @@ class Base:
     @property
     def id(self):
         return self._id
-
-    def serialize(self):
-        raise NotImplementedError()

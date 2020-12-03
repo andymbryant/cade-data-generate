@@ -17,9 +17,7 @@ class Actor(Base):
         self._ip_mask = get_random_ip()
         self._country = get_random_country()
 
-        @property
-        def name(self):
-            return self._name
+
         @property
         def ip_actual(self):
             return self._ip_actual

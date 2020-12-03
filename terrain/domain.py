@@ -8,14 +8,10 @@ second_names = ['Share', 'Connect', 'Talker', 'Chat', 'Bridge', 'Link', 'Party',
 def generate_random_name():
     return f'{choice(first_names)}{choice(second_names)}'
 
-def generate_random_venues():
-    return [Venue() for _ in range(randint(8, 14))]
-
 class Domain(Container):
     def __init__(self, **kwargs):
         super().__init__()
         self._name = kwargs.get('name', generate_random_name())
-        self._venues = kwargs.get('venues', generate_random_venues())
 
     @property
     def venues(self):
@@ -26,6 +22,4 @@ class Domain(Container):
             "id": self.id,
             "type": self.class_name,
             "name": self.name,
-            "dimensions": self.dimensions,
-            "venues": [venue.serialize() for venue in self.venues]
         }

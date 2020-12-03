@@ -51,11 +51,6 @@ def generate_random_name():
     option = choice(t['options'])
     return f'{category}_{option}'
 
-
-
-def generate_random_actor():
-    return Actor()
-
 class Action(Base):
     # name/type
     # actor
@@ -63,13 +58,7 @@ class Action(Base):
     def __init__(self, **kwargs):
         super().__init__()
         self._name = kwargs.get('name', generate_random_name())
-        self._venue = kwargs.get('venue', generate_random_venue())
-        self._actor = kwargs.get('actor', generate_random_actor())
         self._executed_at = kwargs.get('executed_at', datetime.now())
-
-    @property
-    def actor(self):
-        return self._actor
 
     @property
     def executed_at(self):
@@ -78,9 +67,6 @@ class Action(Base):
     def serialize(self):
         return {
             "id": self.id,
-            "type": self.class_name,
             "name": self.name,
-            "actor": self.actor.serialize(),
-            "executed_at": str(self._executed_at)
+            "executed_at": str(self.executed_at)
         }
-

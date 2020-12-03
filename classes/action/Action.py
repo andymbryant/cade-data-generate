@@ -26,6 +26,9 @@ class Action(Base):
     def venue(self):
         return self._venue
 
-
-    # def serialize(self):
-    #     raise NotImplementedError
+    def serialize(self):
+        return {
+            "id": self.id,
+            "name": self.name,
+            "test": 'test'
+        }

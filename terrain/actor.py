@@ -42,6 +42,6 @@ class Actor(Base):
             "id": self.id,
             "type": self.class_name,
             "name": self.name,
-            "ip" : self.ip,
+            "ip": self.ip,
             "country": self.country
         }
