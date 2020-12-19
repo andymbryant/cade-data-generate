@@ -3063,13 +3063,16 @@
         }
       }
     },
+    // Non-base action high-level behavior node
+
     {
       "id": 868929,
       "name": "test",
       "action": {
         "id": 731744,
         "name": "like_legit_users",
-        "executed_at": "2020-12-03 16:06:26.321229"
+        "executed_at": "2020-12-03 16:06:26.321229",
+        "location": [123, 123]
       },
       "actor": {
         "id": 730623,
